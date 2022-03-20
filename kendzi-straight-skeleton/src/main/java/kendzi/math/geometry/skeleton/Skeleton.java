@@ -87,7 +87,7 @@ public class Skeleton {
     /**
      * Additional debug information.
      */
-    private static boolean debug = true;
+    public static boolean debug = true;
 
     /**
      * Inits visual debugger.

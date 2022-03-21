@@ -22,8 +22,6 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.joml.Vector2d;
 import org.joml.Vector2dc;
 
@@ -70,9 +68,6 @@ import kendzi.math.geometry.skeleton.utils.ValidateUtil;
  *
  */
 public class Skeleton {
-
-    /** Log. */
-    private static final Logger log = LogManager.getLogger(Skeleton.class);
 
     /**
      * Error epsilon.
@@ -407,10 +402,7 @@ public class Skeleton {
                 for (Vertex vertex : lavPart) {
                     lav.addLast(vertex);
                 }
-
-                if (log.isDebugEnabled()) {
-                    log.debug("after split: " + lavToString(lav.first()));
-                }
+                
                 vd.debug(sLav);
             } else {
                 /*
@@ -422,9 +414,6 @@ public class Skeleton {
 
                 endPreviousVertex.addNext(newVertex);
 
-                if (log.isDebugEnabled()) {
-                    log.debug("after merge: " + lavToString(newVertex));
-                }
                 vd.debug(sLav);
             }
 

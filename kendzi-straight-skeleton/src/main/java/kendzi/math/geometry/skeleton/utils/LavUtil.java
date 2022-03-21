@@ -3,16 +3,10 @@ package kendzi.math.geometry.skeleton.utils;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import kendzi.math.geometry.skeleton.circular.CircularList;
 import kendzi.math.geometry.skeleton.circular.Vertex;
 
 public class LavUtil {
-
-    /** Log. */
-    private static final Logger log = LogManager.getLogger(LavUtil.class);
 
     /**
      * Check if two vertex are in the same lav.
@@ -50,12 +44,6 @@ public class LavUtil {
      * @return list of vertex in the middle between start and end vertex
      */
     public static List<Vertex> cutLavPart(Vertex startVertex, Vertex endVertex) {
-
-        if (log.isDebugEnabled()) {
-            log.debug("cutLavPart: startVertex: " + startVertex.getPoint() + ", endVertex: " + endVertex.getPoint() + ", lav: "
-                    + lavToString(startVertex));
-        }
-
         List<Vertex> ret = new ArrayList<Vertex>();
 
         int size = startVertex.list().size();
@@ -186,12 +174,6 @@ public class LavUtil {
      *            vertex from lav where vertex will be removed
      */
     public static void mergeBeforeBaseVertex(Vertex base, Vertex merged) {
-
-        if (log.isDebugEnabled()) {
-            log.debug("base: " + base.getPoint() + ", merged: " + merged.getPoint() + ", lavs: base" + lavToString(base)
-                    + " merged" + lavToString(merged));
-        }
-
         int size = merged.list().size();
 
         for (int i = 0; i < size; i++) {
